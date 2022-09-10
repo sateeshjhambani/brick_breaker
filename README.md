@@ -1,4 +1,4 @@
-# brick_breaker
+# Brick Breaker
 
 A modern take on the classic arcade game
 

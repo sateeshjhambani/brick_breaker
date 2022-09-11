@@ -7,13 +7,13 @@ class MyBrick extends StatelessWidget {
   final double brickY;
   final bool brickBroken;
 
-  MyBrick({
+  const MyBrick({Key? key, 
     required this.brickHeight,
     required this.brickWidth,
     required this.brickX,
     required this.brickY,
     required this.brickBroken,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

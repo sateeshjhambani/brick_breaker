@@ -5,7 +5,7 @@ class CoverScreen extends StatelessWidget {
   final bool hasGameStarted;
   final bool isGameOver;
 
-  CoverScreen({required this.hasGameStarted, required this.isGameOver});
+  const CoverScreen({Key? key, required this.hasGameStarted, required this.isGameOver}) : super(key: key);
 
   static var gameFont = GoogleFonts.pressStart2p(
       textStyle: TextStyle(
@@ -15,7 +15,7 @@ class CoverScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return hasGameStarted
         ? Container(
-            alignment: Alignment(0, -0.5),
+            alignment: const Alignment(0, -0.5),
             child: Text(
               isGameOver ? '' : 'BRICK BREAKER',
               style: gameFont.copyWith(color: Colors.deepPurple[200]),
@@ -24,14 +24,14 @@ class CoverScreen extends StatelessWidget {
         : Stack(
             children: [
               Container(
-                alignment: Alignment(0, -0.5),
+                alignment: const Alignment(0, -0.5),
                 child: Text(
                   'BRICK BREAKER',
                   style: gameFont,
                 ),
               ),
               Container(
-                alignment: Alignment(0, -0.1),
+                alignment: const Alignment(0, -0.1),
                 child: Text(
                   'Tap to Play',
                   style: TextStyle(color: Colors.deepPurple[400]),

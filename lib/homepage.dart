@@ -1,13 +1,12 @@
 import 'dart:async';
 
-import 'package:brick_breaker/ball.dart';
-import 'package:brick_breaker/gameOverScreen.dart';
-import 'package:brick_breaker/myBrick.dart';
-import 'package:brick_breaker/player.dart';
+import 'package:brick_breaker/GameObject/ball.dart';
+import 'package:brick_breaker/GameObject/my_brick.dart';
+import 'package:brick_breaker/GameObject/player.dart';
+import 'package:brick_breaker/cover_screen.dart';
+import 'package:brick_breaker/game_over_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'coverScreen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -69,7 +68,7 @@ class _HomePageState extends State<HomePage> {
   void startGame() {
     if (!hasGameStarted) {
       hasGameStarted = true;
-      Timer.periodic(Duration(milliseconds: 10), (timer) {
+      Timer.periodic(const Duration(milliseconds: 10), (timer) {
         moveBall();
 
         updateDirection();

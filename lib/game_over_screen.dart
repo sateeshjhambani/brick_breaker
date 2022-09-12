@@ -5,7 +5,9 @@ class GameOverScreen extends StatelessWidget {
   final bool isGameOver;
   final Function() onResetGame;
 
-  GameOverScreen({required this.isGameOver, required this.onResetGame});
+  const GameOverScreen(
+      {Key? key, required this.isGameOver, required this.onResetGame})
+      : super(key: key);
 
   static var gameFont = GoogleFonts.pressStart2p(
       textStyle: TextStyle(
@@ -17,22 +19,22 @@ class GameOverScreen extends StatelessWidget {
         ? Stack(
             children: [
               Container(
-                alignment: Alignment(0, -0.3),
+                alignment: const Alignment(0, -0.3),
                 child: Text(
                   'GAME OVER',
                   style: gameFont,
                 ),
               ),
               Container(
-                alignment: Alignment(0, -0.1),
+                alignment: const Alignment(0, -0.1),
                 child: GestureDetector(
                   onTap: onResetGame,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(12),
                     child: Container(
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       color: Colors.deepPurple,
-                      child: Text(
+                      child: const Text(
                         'PLAY AGAIN',
                         style: TextStyle(color: Colors.white),
                       ),

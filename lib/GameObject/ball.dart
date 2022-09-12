@@ -7,11 +7,13 @@ class MyBall extends StatelessWidget {
   final bool hasGameStarted;
   final bool isGameOver;
 
-  MyBall(
-      {required this.ballX,
+  const MyBall(
+      {Key? key,
+      required this.ballX,
       required this.ballY,
       required this.hasGameStarted,
-      required this.isGameOver});
+      required this.isGameOver})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,14 +35,14 @@ class MyBall extends StatelessWidget {
               endRadius: 60.0,
               child: Material(
                 elevation: 8,
-                shape: CircleBorder(),
+                shape: const CircleBorder(),
                 child: CircleAvatar(
                   backgroundColor: Colors.deepPurple[100],
                   radius: 7,
                   child: Container(
                     height: 15,
                     width: 15,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.deepPurple,
                       shape: BoxShape.circle,
                     ),
